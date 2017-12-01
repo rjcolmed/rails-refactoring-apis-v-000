@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-xdescribe "Features" do
+describe "Features" do
   describe "authentication" do
     it "displays the username on the page" do
       visit '/auth?code=20'
@@ -8,7 +8,7 @@ xdescribe "Features" do
     end
   end
 
-  xdescribe "visiting root" do
+  describe "visiting root" do
     before :each do
       page.set_rack_session(:service => {"access_token" => 1})
       page.set_rack_session(token: "1")
@@ -22,7 +22,7 @@ xdescribe "Features" do
     end
   end
 
-  xdescribe "new repo form" do
+  describe "new repo form" do
     before :each do
       page.set_rack_session(:service => {"access_token" => 1})
       page.set_rack_session(token: "1")
